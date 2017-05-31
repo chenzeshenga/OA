@@ -30,3 +30,7 @@ hs_err_pid*
 out
 gen
 .idea/
+/target/
+/.settings/
+/.classpath
+/.project
