@@ -9,6 +9,10 @@
     <mvc:annotation-driven/>
     <mvc:resources mapping="/js/**" location="WEB-INF/js/"/>
     <mvc:resources mapping="/css/**" location="WEB-INF/css/"/>
+    <mvc:resources mapping="/assets/**" location="WEB-INF/assets/"/>
+    <bean name="/index.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="WEB-INF/login.html"/>
+    </bean>
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
