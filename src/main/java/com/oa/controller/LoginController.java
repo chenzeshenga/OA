@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LoginController {
     @RequestMapping("/login")
     public String hello() {
-        return "login";
+        return "admin/home";
     }
 }
