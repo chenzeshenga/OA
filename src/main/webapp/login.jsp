@@ -15,17 +15,8 @@
 <head>
     <title>登录</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
-    <script src="jquery-3.1.1.min.js"/>
+    <script src="js/jquery-3.1.1.min.js"/>
     <script src="js/bootstrap.js"></script>
 </head>
-<body>
-<frameset rows="103,*,43" frameborder=0 border="0" framespacing="0">
-    <frame src="${pageContext.request.contextPath}/admin/login/top.jsp" name="topFrame" scrolling="NO" noresize>
-    <frameset cols="159,*" frameborder="0" border="0" framespacing="0">
-        <frame src="${pageContext.request.contextPath}/admin/login/left.jsp" name="leftFrame" noresize scrolling="YES">
-        <frame src="${pageContext.request.contextPath}/admin/login/welcome.jsp" name="mainFrame">
-    </frameset>
-    <frame src="${pageContext.request.contextPath}/admin/login/bottom.jsp" name="bottomFrame" scrolling="NO"  noresize>
-</frameset>
-</body>
+
 </html>
