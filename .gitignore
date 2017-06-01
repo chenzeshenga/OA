@@ -34,3 +34,4 @@ gen
 /.settings/
 /.classpath
 /.project
+/src/main/webapp/WEB-INF/database.properties
