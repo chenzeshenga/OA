@@ -21,7 +21,7 @@ public class LoginController {
 
     @RequestMapping("/menu")
     public String menu() {
-        return "admin/menu";
+        return "admin/testmenu";
     }
 
     @RequestMapping("/teach")

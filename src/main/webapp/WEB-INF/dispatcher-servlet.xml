@@ -11,6 +11,9 @@
     <mvc:resources mapping="/js/**" location="WEB-INF/js/"/>
     <mvc:resources mapping="/css/**" location="WEB-INF/css/"/>
     <mvc:resources mapping="/assets/**" location="WEB-INF/assets/"/>
+    <mvc:resources mapping="/data/**" location="WEB-INF/data/"/>
+    <mvc:resources mapping="/dist/**" location="WEB-INF/dist/"/>
+    <mvc:resources mapping="/vendor/**" location="WEB-INF/vendor/"/>
     <bean name="/index.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
         <property name="viewName" value="WEB-INF/login.html"/>
     </bean>
