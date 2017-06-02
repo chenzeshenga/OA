@@ -18,12 +18,12 @@
 <body>
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-pills nav-stacked">
-        <li id="flip">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <li>
+            <a id="flip" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 教学部 <span class="caret"></span>
             </a>
             <ul class="nav nav-pills nav-stacked" style="margin-left: 10px" id="panel">
-                <li><a href="">基本信息</a></li>
+                <li><a href="/teach" target="mainFrame">基本信息</a></li>
                 <li><a href="">个人资料</a></li>
                 <li><a href="">课程信息</a></li>
             </ul>
