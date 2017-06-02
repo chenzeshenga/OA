@@ -16,24 +16,23 @@
 
 </head>
 <body>
-    <div class="col-sm-3 col-md-2 sidebar">
-        <ul class="nav nav-pills nav-stacked">
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" data-target="/teach" role="button" aria-haspopup="true" aria-expanded="false">
-                    教学部 <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="">教质部</a></li>
-                    <li><a href="#">财务部</a></li>
-                    <li><a href="#">人事部</a></li>
-                </ul>
-            </li>
-            <li role="presentation"><a href="/teach" target="mainFrame">教学部</a></li>
-            <li role="presentation"><a href="">教质部</a></li>
-            <li role="presentation"><a href="#">财务部</a></li>
-            <li role="presentation"><a href="#">人事部</a></li>
-            <li role="presentation"><a href="#">个人中心</a></li>
-        </ul>
-    </div>
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-pills nav-stacked">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                教学部 <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="">基本信息</a></li>
+                <li><a href="#">个人资料</a></li>
+                <li><a href="#">课程信息</a></li>
+            </ul>
+        </li>
+        <li role="presentation"><a href="">教质部</a></li>
+        <li role="presentation"><a href="#">财务部</a></li>
+        <li role="presentation"><a href="#">人事部</a></li>
+        <li role="presentation"><a href="#">个人中心</a></li>
+    </ul>
+</div>
 </body>
 </html>
