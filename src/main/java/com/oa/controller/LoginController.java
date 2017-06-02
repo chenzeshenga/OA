@@ -28,4 +28,9 @@ public class LoginController {
     public String teach() {
         return "admin/teach";
     }
+
+    @RequestMapping("/top")
+    public String top() {
+        return "admin/top";
+    }
 }

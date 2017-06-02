@@ -13,13 +13,13 @@
 <%@ page isELIgnored="false"%>
 <html>
 <head>
-    <title>登录</title>
+    <title>主页</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <script src="js/jquery-3.1.1.min.js"/>
     <script src="js/bootstrap.js"></script>
 </head>
 <frameset rows="103,*,43" frameborder=0 border="0" framespacing="0">
-    <frame src="" name="topFrame" scrolling="NO" noresize>
+    <frame src="/top" name="topFrame" scrolling="NO" noresize>
     <frameset cols="159,*" frameborder="0" border="0" framespacing="0">
         <frame src="/menu" name="leftFrame" noresize scrolling="YES">
         <frame src="" name="mainFrame">
