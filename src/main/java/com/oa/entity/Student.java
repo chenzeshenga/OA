@@ -4,39 +4,39 @@ package com.oa.entity;
  * Created by somed on 2017/6/2.
  */
 public class Student {
-    private int student_id;
-    private String student_name;
-    private String student_password;
+    private int studentId;
+    private String studentName;
+    private String studentPassword;
     private String sex;
     private String CLASS;
     private String club;
     private String email;
     private String Tel;
-    private String NativePlace;
+    private String nativePlace;
     private String age;
 
-    public int getStudent_id() {
-        return student_id;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public void setStudent_id(int student_id) {
-        this.student_id = student_id;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 
-    public String getStudent_name() {
-        return student_name;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setStudent_name(String student_name) {
-        this.student_name = student_name;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public String getStudent_password() {
-        return student_password;
+    public String getStudentPassword() {
+        return studentPassword;
     }
 
-    public void setStudent_password(String student_password) {
-        this.student_password = student_password;
+    public void setStudentPassword(String studentPassword) {
+        this.studentPassword = studentPassword;
     }
 
     public String getSex() {
@@ -80,11 +80,11 @@ public class Student {
     }
 
     public String getNativePlace() {
-        return NativePlace;
+        return nativePlace;
     }
 
     public void setNativePlace(String nativePlace) {
-        NativePlace = nativePlace;
+        this.nativePlace = nativePlace;
     }
 
     public String getAge() {

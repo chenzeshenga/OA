@@ -1,48 +1,51 @@
 package com.oa.entity;
 
+import org.apache.ibatis.type.Alias;
+
 import java.util.Date;
 
 /**
  * Created by somed on 2017/6/2.
  */
+@Alias("Teacher")
 public class Teacher {
-    private int teacher_id;
-    private String teacher_name;
-    private String teacher_password;
+    private int teacherId;
+    private String teacherName;
+    private String teacherPassword;
     private String sex;
-    private String ManagerClass;
+    private String managerClass;
     private String teacherInfo;
     private String email;
-    private String WorkState;
-    private String Tel;
-    private String Department;
+    private String workState;
+    private String tel;
+    private String department;
     private String age;
-    private String NativePlace;
-    private Date EntryTime;
-    private String Register;
+    private String nativePlace;
+    private Date entryTime;
+    private String register;
 
-    public int getTeacher_id() {
-        return teacher_id;
+    public int getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeacher_id(int teacher_id) {
-        this.teacher_id = teacher_id;
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public String getTeacher_name() {
-        return teacher_name;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setTeacher_name(String teacher_name) {
-        this.teacher_name = teacher_name;
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 
-    public String getTeacher_password() {
-        return teacher_password;
+    public String getTeacherPassword() {
+        return teacherPassword;
     }
 
-    public void setTeacher_password(String teacher_password) {
-        this.teacher_password = teacher_password;
+    public void setTeacherPassword(String teacherPassword) {
+        this.teacherPassword = teacherPassword;
     }
 
     public String getSex() {
@@ -54,11 +57,11 @@ public class Teacher {
     }
 
     public String getManagerClass() {
-        return ManagerClass;
+        return managerClass;
     }
 
     public void setManagerClass(String managerClass) {
-        ManagerClass = managerClass;
+        this.managerClass = managerClass;
     }
 
     public String getTeacherInfo() {
@@ -78,27 +81,27 @@ public class Teacher {
     }
 
     public String getWorkState() {
-        return WorkState;
+        return workState;
     }
 
     public void setWorkState(String workState) {
-        WorkState = workState;
+        this.workState = workState;
     }
 
     public String getTel() {
-        return Tel;
+        return tel;
     }
 
     public void setTel(String tel) {
-        Tel = tel;
+        this.tel = tel;
     }
 
     public String getDepartment() {
-        return Department;
+        return department;
     }
 
     public void setDepartment(String department) {
-        Department = department;
+        this.department = department;
     }
 
     public String getAge() {
@@ -110,26 +113,26 @@ public class Teacher {
     }
 
     public String getNativePlace() {
-        return NativePlace;
+        return nativePlace;
     }
 
     public void setNativePlace(String nativePlace) {
-        NativePlace = nativePlace;
+        this.nativePlace = nativePlace;
     }
 
     public Date getEntryTime() {
-        return EntryTime;
+        return entryTime;
     }
 
     public void setEntryTime(Date entryTime) {
-        EntryTime = entryTime;
+        this.entryTime = entryTime;
     }
 
     public String getRegister() {
-        return Register;
+        return register;
     }
 
     public void setRegister(String register) {
-        Register = register;
+        this.register = register;
     }
 }
