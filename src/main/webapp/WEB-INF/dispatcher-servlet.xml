@@ -14,9 +14,6 @@
     <mvc:resources mapping="/data/**" location="WEB-INF/data/"/>
     <mvc:resources mapping="/dist/**" location="WEB-INF/dist/"/>
     <mvc:resources mapping="/vendor/**" location="WEB-INF/vendor/"/>
-    <bean name="/index.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
-        <property name="viewName" value="WEB-INF/login.html"/>
-    </bean>
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
