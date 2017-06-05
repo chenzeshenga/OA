@@ -35,3 +35,4 @@ gen
 /.classpath
 /.project
 /src/main/webapp/WEB-INF/database.properties
+/src/main/resources/generatorConfig.xml
