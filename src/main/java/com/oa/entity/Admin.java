@@ -4,35 +4,35 @@ package com.oa.entity;
  * Created by somed on 2017/6/2.
  */
 public class Admin {
-    private String admin_id;
-    private String admin_name;
-    private String admin_password;
+    private String adminId;
+    private String adminName;
+    private String adminPassword;
     private String sex;
     private String email;
     private String AdminInfo;
 
-    public String getAdmin_id() {
-        return admin_id;
+    public String getAdminId() {
+        return adminId;
     }
 
-    public void setAdmin_id(String admin_id) {
-        this.admin_id = admin_id;
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
     }
 
-    public String getAdmin_name() {
-        return admin_name;
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setAdmin_name(String admin_name) {
-        this.admin_name = admin_name;
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
-    public String getAdmin_password() {
-        return admin_password;
+    public String getAdminPassword() {
+        return adminPassword;
     }
 
-    public void setAdmin_password(String admin_password) {
-        this.admin_password = admin_password;
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
     }
 
     public String getSex() {

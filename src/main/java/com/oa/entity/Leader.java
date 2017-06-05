@@ -6,9 +6,9 @@ import java.util.Date;
  * Created by somed on 2017/6/2.
  */
 public class Leader {
-    private int leader_id;
-    private String leader_name;
-    private String leader_password;
+    private int leaderId;
+    private String leaderName;
+    private String leaderPassword;
     private String sex;
     private String ManagerDepartment;
     private String email;
@@ -20,28 +20,28 @@ public class Leader {
     private String NativePlace;
     private String age;
 
-    public int getLeader_id() {
-        return leader_id;
+    public int getLeaderId() {
+        return leaderId;
     }
 
-    public void setLeader_id(int leader_id) {
-        this.leader_id = leader_id;
+    public void setLeaderId(int leaderId) {
+        this.leaderId = leaderId;
     }
 
-    public String getLeader_name() {
-        return leader_name;
+    public String getLeaderName() {
+        return leaderName;
     }
 
-    public void setLeader_name(String leader_name) {
-        this.leader_name = leader_name;
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
     }
 
-    public String getLeader_password() {
-        return leader_password;
+    public String getLeaderPassword() {
+        return leaderPassword;
     }
 
-    public void setLeader_password(String leader_password) {
-        this.leader_password = leader_password;
+    public void setLeaderPassword(String leaderPassword) {
+        this.leaderPassword = leaderPassword;
     }
 
     public String getSex() {

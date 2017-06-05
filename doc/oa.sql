@@ -20,13 +20,13 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
-  `admin_id` int(11) NOT NULL,
-  `admin_name` varchar(45) NOT NULL,
-  `admin_password` varchar(45) NOT NULL,
+  `adminId` int(11) NOT NULL,
+  `adminName` varchar(45) NOT NULL,
+  `adminPassword` varchar(45) NOT NULL,
   `sex` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `AdminInfo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`admin_id`)
+  PRIMARY KEY (`adminId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -61,8 +61,8 @@ INSERT INTO `course` VALUES ('101', '计算机网络', '28', '实验课', '2.0',
 DROP TABLE IF EXISTS `leaders`;
 CREATE TABLE `leaders` (
   `leaders_id` int(11) NOT NULL,
-  `leader_name` varchar(45) NOT NULL,
-  `leader_password` varchar(45) NOT NULL,
+  `leaderName` varchar(45) NOT NULL,
+  `leaderPassword` varchar(45) NOT NULL,
   `sex` varchar(45) NOT NULL,
   `ManagerDepartment` varchar(45) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
@@ -147,9 +147,9 @@ CREATE TABLE `reimbursement` (
 -- ----------------------------
 DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
-  `student_id` int(11) NOT NULL,
-  `student_name` varchar(45) NOT NULL,
-  `student_password` varchar(45) NOT NULL,
+  `studentId` int(11) NOT NULL,
+  `studentName` varchar(45) NOT NULL,
+  `studentPassword` varchar(45) NOT NULL,
   `sex` varchar(45) NOT NULL,
   `class` varchar(45) NOT NULL,
   `club` varchar(45) DEFAULT NULL,
@@ -157,7 +157,7 @@ CREATE TABLE `students` (
   `Tel` varchar(45) NOT NULL,
   `NativePlace` varchar(45) DEFAULT NULL,
   `age` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`student_id`)
+  PRIMARY KEY (`studentId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -169,9 +169,9 @@ CREATE TABLE `students` (
 -- ----------------------------
 DROP TABLE IF EXISTS `teachers`;
 CREATE TABLE `teachers` (
-  `teacher_id` int(11) NOT NULL,
-  `teacher_name` varchar(45) NOT NULL,
-  `teacher_password` varchar(45) NOT NULL,
+  `teacherId` int(11) NOT NULL,
+  `teacherName` varchar(45) NOT NULL,
+  `teacherPassword` varchar(45) NOT NULL,
   `sex` varchar(45) NOT NULL,
   `ManagerClass` varchar(45) DEFAULT NULL,
   `teacherInfo` varchar(45) DEFAULT NULL,
@@ -183,7 +183,7 @@ CREATE TABLE `teachers` (
   `NativePlace` varchar(45) NOT NULL,
   `EntryTime` date NOT NULL,
   `Register` varchar(45) NOT NULL,
-  PRIMARY KEY (`teacher_id`)
+  PRIMARY KEY (`teacherId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
