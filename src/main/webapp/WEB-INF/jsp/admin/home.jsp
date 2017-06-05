@@ -111,6 +111,9 @@
     <!-- /.navbar-top-links -->
 </nav>
 
+<iframe src="/home_except_top" width=100% height=80% marginwidth=0 frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+
+
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -127,6 +130,5 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="dist/js/sb-admin-2.js"></script>
-<iframe src="/home_except_top" width=100% height=80% marginwidth=0 frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
 </body>
 </html>
