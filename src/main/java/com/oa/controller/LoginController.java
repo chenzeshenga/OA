@@ -14,14 +14,14 @@ public class LoginController {
         return "/login";
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/home_except_top")
     public String home() {
-        return "admin/home";
+        return "admin/home_except_top";
     }
 
     @RequestMapping("/menu")
     public String menu() {
-        return "admin/testmenu";
+        return "admin/menu";
     }
 
     @RequestMapping("/teach")
@@ -29,8 +29,8 @@ public class LoginController {
         return "admin/teach";
     }
 
-    @RequestMapping("/top")
+    @RequestMapping("/home")
     public String top() {
-        return "admin/top";
+        return "admin/home";
     }
 }
