@@ -1,11 +1,15 @@
 package com.oa.controller;
 
 import com.oa.mapper.TeacherMapper;
+import com.oa.util.MyUserToken;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by xiongshengjie on 2017/5/31.
@@ -17,9 +21,25 @@ public class LoginController {
     TeacherMapper mapper;
 
     @RequestMapping("/login")
-    public String hello(Model model) {
-        model.addAttribute("teacher", mapper.selectByPrimaryKey(1));
+    public String hello() {
         return "loginView";
+    }
+
+    @RequestMapping("/doLogin")
+    public String isLogin(@RequestParam("username") String username,
+                          @RequestParam("password") String password,
+//                          @RequestParam("rememberMe") boolean rememberMe,
+                          @RequestParam("userType") String userType) {
+        Subject user = SecurityUtils.getSubject();
+        boolean rememberMe = true;
+        MyUserToken token =
+                new MyUserToken(username, password, rememberMe, userType);
+        try {
+            user.login(token);
+            return "teach";
+        } catch (Exception uae) {
+            throw new RuntimeException(uae);
+        }
     }
 
 

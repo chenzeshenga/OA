@@ -35,4 +35,53 @@
         <property name="basePackage" value="com.oa.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!--数据库密码是MD5算法加密，配置密码匹配对象-->
+    <!--todo:加密-->
+    <!--验证时候会自动解密验证的说，所以输入的时候怎么办呢-->
+    <!--<bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">-->
+        <!--<property name="hashAlgorithmName" value="MD5"/>-->
+    <!--</bean>-->
+
+    <!--todo:缓存管理-->
+    <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"/>
+    <!--<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">-->
+        <!--<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>-->
+    <!--</bean>-->
+
+    <!--todo:Realm 配置-->
+    <bean id="jdbcRealm" class="com.oa.service.MyRealm">
+    </bean>
+
+    <!--shiro 安全管理器-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="jdbcRealm"/>
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
+
+    <!--shiro 主过滤器-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!--核心安全接口-->
+        <property name="securityManager" ref="securityManager"/>
+        <property name="unauthorizedUrl" value="/login"/>
+        <!--todo:chain action-->
+        <property name="filterChainDefinitions">
+            <value>
+                /security/*=anon
+                /admin=authc
+            </value>
+        </property>
+    </bean>
+
+    <!--开启shiro的注解(@RequiresRoles,@RequiresPermission),需要借助AOP扫描Shiro注解的类-->
+    <!--必要时进行安全逻辑验证-->
+    <bean
+        class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+        <property name="proxyTargetClass" value="true"/>
+    </bean>
+    <bean
+        class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
 </beans>
