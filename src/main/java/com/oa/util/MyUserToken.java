@@ -10,9 +10,8 @@ public class MyUserToken extends UsernamePasswordToken {
     private String userType;
 
     public MyUserToken(String username, String password,
-                       boolean rememberMe, String host,
-                       String userType) {
-        super(username, password, rememberMe, host);
+                       boolean rememberMe, String userType) {
+        super(username, password, rememberMe);
         this.userType = userType;
     }
 

@@ -38,9 +38,11 @@
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 
     <!--数据库密码是MD5算法加密，配置密码匹配对象-->
-    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
-        <property name="hashAlgorithmName" value="MD5"/>
-    </bean>
+    <!--todo:加密-->
+    <!--验证时候会自动解密验证的说，所以输入的时候怎么办呢-->
+    <!--<bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">-->
+        <!--<property name="hashAlgorithmName" value="MD5"/>-->
+    <!--</bean>-->
 
     <!--todo:缓存管理-->
     <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"/>
@@ -50,7 +52,6 @@
 
     <!--todo:Realm 配置-->
     <bean id="jdbcRealm" class="com.oa.service.MyRealm">
-        <property name="credentialsMatcher" ref="credentialsMatcher"/>
     </bean>
 
     <!--shiro 安全管理器-->
@@ -68,7 +69,6 @@
         <property name="filterChainDefinitions">
             <value>
                 /security/*=anon
-                /teach=authc
                 /admin=authc
             </value>
         </property>
