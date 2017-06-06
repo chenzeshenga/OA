@@ -85,6 +85,12 @@
     from teachers
     where teacherId = #{teacherid,jdbcType=INTEGER}
   </select>
+  <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_list"/>
+    FROM teachers
+    WHERE teacherId = #{teacherName,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from teachers
     where teacherId = #{teacherid,jdbcType=INTEGER}
