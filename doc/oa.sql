@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.18, for Win64 (x86_64)
 --
 -- Host: localhost    Database: oa
 -- ------------------------------------------------------
@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `admin` (
-  `adminId` int(11) NOT NULL,
-  `adminName` varchar(45) DEFAULT NULL,
-  `adminPassword` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `AdminInfo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`adminId`)
+  `info` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -81,20 +81,20 @@ DROP TABLE IF EXISTS `leaders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `leaders` (
-  `leaders_id` int(11) NOT NULL,
-  `leaderName` varchar(45) DEFAULT NULL,
-  `leaderPassword` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
   `ManagerDepartment` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `leaderInfo` varchar(45) DEFAULT NULL,
+  `info` varchar(45) DEFAULT NULL,
   `Tel` varchar(45) DEFAULT NULL,
   `WorkState` varchar(45) DEFAULT NULL,
   `Register` varchar(45) DEFAULT NULL,
   `EntryTime` date DEFAULT NULL,
   `NativePlace` varchar(45) DEFAULT NULL,
   `age` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`leaders_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -204,9 +204,9 @@ DROP TABLE IF EXISTS `students`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `students` (
-  `studentId` int(11) NOT NULL,
-  `studentName` varchar(45) DEFAULT NULL,
-  `studentPassword` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
   `s_Class` varchar(45) DEFAULT NULL,
   `club` varchar(45) DEFAULT NULL,
@@ -214,7 +214,7 @@ CREATE TABLE `students` (
   `Tel` varchar(45) DEFAULT NULL,
   `NativePlace` varchar(45) DEFAULT NULL,
   `age` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`studentId`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -235,12 +235,12 @@ DROP TABLE IF EXISTS `teachers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `teachers` (
-  `teacherId` int(11) NOT NULL,
-  `teacherName` varchar(45) DEFAULT NULL,
-  `teacherPassword` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
   `ManagerClass` varchar(45) DEFAULT NULL,
-  `teacherInfo` varchar(45) DEFAULT NULL,
+  `info` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `WorkState` varchar(45) DEFAULT NULL,
   `Tel` varchar(45) DEFAULT NULL,
@@ -249,7 +249,7 @@ CREATE TABLE `teachers` (
   `NativePlace` varchar(45) DEFAULT NULL,
   `EntryTime` date DEFAULT NULL,
   `Register` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`teacherId`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -259,16 +259,9 @@ CREATE TABLE `teachers` (
 
 LOCK TABLES `teachers` WRITE;
 /*!40000 ALTER TABLE `teachers` DISABLE KEYS */;
+INSERT INTO `teachers` VALUES (1,'LX','admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'oa'
---
-
---
--- Dumping routines for database 'oa'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -279,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-05 10:32:51
+-- Dump completed on 2017-06-07  8:30:26

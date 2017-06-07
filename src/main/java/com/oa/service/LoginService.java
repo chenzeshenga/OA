@@ -16,8 +16,8 @@ public class LoginService {
         Teacher teacher;
         if (userType.equalsIgnoreCase("teacher")) {
             teacher = teacherMapper.selectByUserName(username);
-            System.err.println(teacher.getTeacherpassword());
-            return teacher.getTeacherpassword();
+//            System.err.println(teacher.getPassword());
+            return teacher.getPassword();
         } else return null;
     }
 

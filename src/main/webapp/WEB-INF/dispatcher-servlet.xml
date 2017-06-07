@@ -41,13 +41,13 @@
     <!--todo:加密-->
     <!--验证时候会自动解密验证的说，所以输入的时候怎么办呢-->
     <!--<bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">-->
-        <!--<property name="hashAlgorithmName" value="MD5"/>-->
+    <!--<property name="hashAlgorithmName" value="MD5"/>-->
     <!--</bean>-->
 
     <!--todo:缓存管理-->
     <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager"/>
     <!--<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">-->
-        <!--<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>-->
+    <!--<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>-->
     <!--</bean>-->
 
     <!--todo:Realm 配置-->
@@ -77,11 +77,12 @@
     <!--开启shiro的注解(@RequiresRoles,@RequiresPermission),需要借助AOP扫描Shiro注解的类-->
     <!--必要时进行安全逻辑验证-->
     <bean
-        class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+            class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+            depends-on="lifecycleBeanPostProcessor">
         <property name="proxyTargetClass" value="true"/>
     </bean>
     <bean
-        class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+            class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager"/>
     </bean>
 </beans>
