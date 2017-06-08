@@ -32,7 +32,7 @@ public class LoginService {
             Student student;
             student = studentMapper.selectByUserName(username);
             return student.getPassword();
-        } else if (username.equalsIgnoreCase("leader")) {
+        } else if (userType.equalsIgnoreCase("leader")) {
             Leader leader;
             leader = leaderMapper.selectByUserName(username);
             return leader.getPassword();
