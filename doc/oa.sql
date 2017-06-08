@@ -23,14 +23,14 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `info` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'admin','admin','',NULL,NULL);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +82,7 @@ DROP TABLE IF EXISTS `leaders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `leaders` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
@@ -95,7 +96,7 @@ CREATE TABLE `leaders` (
   `NativePlace` varchar(45) DEFAULT NULL,
   `age` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,6 +105,7 @@ CREATE TABLE `leaders` (
 
 LOCK TABLES `leaders` WRITE;
 /*!40000 ALTER TABLE `leaders` DISABLE KEYS */;
+INSERT INTO `leaders` VALUES (1,'leader','admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `leaders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,19 +117,16 @@ DROP TABLE IF EXISTS `leave`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `leave` (
-  `LeaveNo` tinyint(4) NOT NULL,
-  `ApplicantName` varchar(10) DEFAULT NULL,
-  `ApplicantStartTime` tinyint(4) DEFAULT NULL,
-  `ApplicantEndTime` datetime(6) DEFAULT NULL,
-  `ApproveTime` datetime(6) DEFAULT NULL,
-  `ApproverName` varchar(10) DEFAULT NULL,
-  `LeaveReason` varchar(20) DEFAULT NULL,
-  `ApplicantDepartment` varchar(10) DEFAULT NULL,
-  `ApplicantJob` varchar(10) DEFAULT NULL,
-  `ApplicationStatus` enum('YES','NO') DEFAULT NULL,
-  `ApproverDepartment` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`LeaveNo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ApplicationStatus` varchar(20) DEFAULT 'PENDING',
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `applicantId` int(11) DEFAULT NULL,
+  `startTime` datetime(6) DEFAULT NULL,
+  `endTime` datetime(6) DEFAULT NULL,
+  `reason` varchar(20) DEFAULT NULL,
+  `ApproverId` int(11) DEFAULT NULL,
+  `approveTime` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,6 +135,7 @@ CREATE TABLE `leave` (
 
 LOCK TABLES `leave` WRITE;
 /*!40000 ALTER TABLE `leave` DISABLE KEYS */;
+INSERT INTO `leave` VALUES ('YES',2,1,'2017-06-07 09:49:45.754000','2017-06-07 09:49:49.132000','高考替考',NULL,NULL);
 /*!40000 ALTER TABLE `leave` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,18 +173,16 @@ DROP TABLE IF EXISTS `reimbursement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reimbursement` (
-  `ReimbursementNo` tinyint(4) unsigned NOT NULL AUTO_INCREMENT,
-  `ApplicantName` varchar(10) DEFAULT NULL,
-  `ApplicantDepartment` varchar(10) DEFAULT NULL,
-  `ApplicantJob` varchar(10) DEFAULT NULL,
-  `ReimbursementType` varchar(20) DEFAULT NULL,
-  `ReimbursementMoney` int(10) DEFAULT NULL,
-  `ApproveTime` datetime(6) DEFAULT NULL,
-  `ApproveName` varchar(10) DEFAULT NULL,
-  `ApproverDepartment` varchar(10) DEFAULT NULL,
-  `ReimbursementStatus` enum('NO','YES') DEFAULT NULL,
-  PRIMARY KEY (`ReimbursementNo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` tinyint(4) unsigned NOT NULL AUTO_INCREMENT,
+  `applicantId` int(11) DEFAULT NULL,
+  `applyTime` datetime(6) DEFAULT NULL,
+  `type` varchar(20) DEFAULT NULL,
+  `money` int(10) DEFAULT NULL,
+  `approverId` int(11) DEFAULT NULL,
+  `approveTime` datetime(6) DEFAULT NULL,
+  `ReimbursementStatus` enum('NO','YES','PENDING') DEFAULT 'PENDING',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,6 +191,7 @@ CREATE TABLE `reimbursement` (
 
 LOCK TABLES `reimbursement` WRITE;
 /*!40000 ALTER TABLE `reimbursement` DISABLE KEYS */;
+INSERT INTO `reimbursement` VALUES (1,1,'2017-06-08 09:18:16.675000',NULL,100,NULL,NULL,'PENDING');
 /*!40000 ALTER TABLE `reimbursement` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +203,7 @@ DROP TABLE IF EXISTS `students`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `students` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
@@ -215,7 +214,7 @@ CREATE TABLE `students` (
   `NativePlace` varchar(45) DEFAULT NULL,
   `age` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,6 +223,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
+INSERT INTO `students` VALUES (1,'student','admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,7 +235,7 @@ DROP TABLE IF EXISTS `teachers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `teachers` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `sex` varchar(45) DEFAULT NULL,
@@ -250,7 +250,7 @@ CREATE TABLE `teachers` (
   `EntryTime` date DEFAULT NULL,
   `Register` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -272,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-07  8:30:26
+-- Dump completed on 2017-06-08 10:31:23
