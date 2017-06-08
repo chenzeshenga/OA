@@ -69,7 +69,7 @@
                                 <c:when test="${item.applicationstatus=='NO'}">
                                 不批准
                                 </c:when>
-                                </c:choose>
+                                </c:choose></td>
                         </tr>
                     </c:forEach>
                 </shiro:hasAnyRoles>

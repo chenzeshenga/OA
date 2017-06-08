@@ -24,4 +24,7 @@ public interface ReimbursementMapper {
     List<Reimbursement> listPositiveReimbursement();
 
     int updateVerifyOpinion(Reimbursement reimbursement);
+
+    List<Reimbursement> listRemibursementofAperson(int applicantId);
+
 }
