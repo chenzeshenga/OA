@@ -18,4 +18,6 @@ public interface AdminMapper {
      * @mbg.generated Wed Jun 07 08:17:00 CST 2017
      */
     int insertSelective(Admin record);
+
+    Admin selectByUserName(String username);
 }

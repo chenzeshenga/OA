@@ -18,4 +18,6 @@ public interface LeaderMapper {
      * @mbg.generated Wed Jun 07 08:17:00 CST 2017
      */
     int insertSelective(Leader record);
+
+    Leader selectByUserName(String username);
 }

@@ -18,4 +18,6 @@ public interface StudentMapper {
      * @mbg.generated Wed Jun 07 08:17:00 CST 2017
      */
     int insertSelective(Student record);
+
+    Student selectByUserName(String username);
 }
