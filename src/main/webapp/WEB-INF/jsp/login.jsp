@@ -92,7 +92,7 @@
                                                 <select class="form-control input-sm" name="userType">
                                                     <option value="student" selected="selected">学生</option>
                                                     <option value="teacher">老师</option>
-                                                    <option value="">领导</option>
+                                                    <option value="leader">领导</option>
                                                 </select>
                                             </label>
 

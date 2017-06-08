@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group col-lg-6 col-lg-offset-3">
-                        <label>申请请假理由</label>
+                        <label>请假理由</label>
                         <textarea name="reason" class="form-control" rows="3"></textarea>
                     </div>
 

@@ -1,5 +1,6 @@
 <%@ taglib prefix="for" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -42,17 +43,37 @@
                             <th>结束时间</th>
                             <th>申请人</th>
                             <th>处理结果</th>
+                            <shiro:hasRole name="leader">
+                                <th>处理</th>
+                            </shiro:hasRole>
                         </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${list}" var="item" varStatus="status">
-                                <td>${item.id}</td>
-                                <td>${item.reason}</td>
-                                <td>${item.starttime}</td>
-                                <td>${item.endtime}</td>
-                                <td>${item.applicantid}</td>
-                                <td>${item.applicationstatus}</td>
-                            </c:forEach>
+                            <shiro:hasRole name="teacher">
+                                <c:forEach items="${list}" var="item" varStatus="status">
+                                    <td>${item.id}</td>
+                                    <td>${item.reason}</td>
+                                    <td>${item.starttime}</td>
+                                    <td>${item.endtime}</td>
+                                    <td>${item.applicantid}</td>
+                                    <td>${item.applicationstatus}</td>
+                                </c:forEach>
+                            </shiro:hasRole>
+                            <shiro:hasRole name="leader">
+                                <c:forEach items="${list}" var="item" varStatus="status">
+                                    <td>${item.id}</td>
+                                    <td>${item.reason}</td>
+                                    <td>${item.starttime}</td>
+                                    <td>${item.endtime}</td>
+                                    <td>${item.applicantid}</td>
+                                    <td>${item.applicationstatus}</td>
+                                    <td><a href="#"
+                                           onclick="window.location.href='/edit?oid=${item.id}&status=1'">批准</a>
+                                        <a href="#"
+                                           onclick="window.location.href='/edit?oid=${item.id}&status=0'">不批准</a>
+                                    </td>
+                                </c:forEach>
+                            </shiro:hasRole>
                         </tbody>
                     </table>
                 </div>
