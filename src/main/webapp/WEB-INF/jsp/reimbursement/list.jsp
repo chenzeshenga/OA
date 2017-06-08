@@ -57,8 +57,7 @@
                             <td><fmt:formatDate value="${item.applytime}" pattern="yyyy-MM-dd HH:mm"/></td>
                             <td>${item.type}</td>
                             <td>${item.money}</td>
-                            <td>${item.applicantid}</td>
-                            <td>${item.reimbursementstatus}</td>
+                            <td>${user.name}</td>
                             <td>
                                 <c:choose>
                                     <c:when test="${item.reimbursementstatus=='PENDING'}">
