@@ -20,19 +20,19 @@ public class ReimbursementController {
     @Autowired
     ReimbursementService reimbursementService ;
 
-    @RequestMapping("/D_list")
+    @RequestMapping("/listre")
     public ModelAndView listReimbursement() {
         ModelAndView mav = new ModelAndView();
 
         List<Reimbursement> list = reimbursementService.listPositiveReimbursement();
         mav.addObject("list", list);
-        mav.setViewName("reimbursement/D_list");
+        mav.setViewName("reimbursement/list");
         return mav;
     }
 
-    @RequestMapping("/D_edit")
+    @RequestMapping("/editre")
     public String editLeave() {
-        return "reimbursement/D_edit";
+        return "reimbursement/edit";
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/doD_Edit")
@@ -40,6 +40,6 @@ public class ReimbursementController {
                            @RequestParam("money") int money,
                            @RequestParam("id") int id) {
         reimbursementService.askForReimbursement(id,money,type);
-        return "redirect:/D_list";
+        return "redirect:/list/re";
     }
 }
