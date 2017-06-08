@@ -35,6 +35,8 @@ gen
 /.classpath
 /.project
 /src/main/webapp/WEB-INF/database.properties
+
 /src/main/resources/generatorConfig.xml
 /src/main/resources/mybatis-generator-config_1_0.dtd
 /src/test
+/src/main/resources/database.properties
