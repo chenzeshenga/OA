@@ -6,6 +6,7 @@ import com.oa.service.LoginService;
 import com.oa.util.MyUserToken;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,12 @@ public class LoginController {
         return "login";
     }
 
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+
+        return "login";
+    }
+
     @RequestMapping("/doLogin")
     public String isLogin(@RequestParam("username") String username,
                           @RequestParam("password") String password,
@@ -37,8 +44,8 @@ public class LoginController {
                           HttpSession session) {
         Subject user = SecurityUtils.getSubject();
         boolean rememberMe = true;
-        MyUserToken token =
-                new MyUserToken(username, password, rememberMe, userType);
+        String userTypeandName=userType+":"+username;
+        UsernamePasswordToken token =new UsernamePasswordToken(userTypeandName, password, rememberMe);
         try {
             user.login(token);
             if (userType.equalsIgnoreCase("teacher"))
@@ -48,13 +55,14 @@ public class LoginController {
             else if (userType.equalsIgnoreCase("leader"))
                 session.setAttribute("user", loginService.getLeaderByUsername(username));
             else session.setAttribute("user", loginService.getStudentByUsername(username));
+
             return "redirect:/";
         } catch (Exception uae) {
             throw new RuntimeException(uae);
         }
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String home(Model model, HttpSession session) {
         model.addAttribute("user", session.getAttribute("user"));
         return "admin/home";
