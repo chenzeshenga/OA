@@ -20,4 +20,6 @@ public interface TeacherMapper {
     int insertSelective(Teacher record);
 
     Teacher selectByUserName(String name);
+
+    String getNameFromId(int id);
 }

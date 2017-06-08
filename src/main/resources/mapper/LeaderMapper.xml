@@ -24,6 +24,9 @@
     <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
         select * from leaders WHERE name=#{username};
     </select>
+    <select id="getNameFromId" parameterType="java.lang.Integer" resultType="java.lang.String">
+        SELECT name from leaders WHERE id=#{id,jdbcType=INTEGER}
+    </select>
     <insert id="insert" parameterType="com.oa.entity.Leader">
         <!--
           WARNING - @mbg.generated

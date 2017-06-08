@@ -19,8 +19,12 @@
 
     <select id="listPositiveLeaves" resultMap="BaseResultMap">
         SELECT *
+        FROM `leave`;
+    </select>
+    <select id="listLeavesOfAPerson" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT *
         FROM `leave`
-        WHERE ApplicationStatus='PENDING';
+        WHERE applicantId=#{id,jdbcType=INTEGER}
     </select>
     <update id="updateVerifyOpinion" parameterType="com.oa.entity.Leave">
         UPDATE `leave` SET approveTime=#{approvetime,jdbcType=TIMESTAMP},

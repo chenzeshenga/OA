@@ -23,6 +23,9 @@
         FROM students
         WHERE name=#{username,jdbcType=VARCHAR}
     </select>
+    <select id="getNameFromId" parameterType="java.lang.Integer" resultType="java.lang.String">
+        SELECT name from students WHERE id=#{id,jdbcType=INTEGER}
+    </select>
     <insert id="insert" parameterType="com.oa.entity.Student">
         <!--
           WARNING - @mbg.generated

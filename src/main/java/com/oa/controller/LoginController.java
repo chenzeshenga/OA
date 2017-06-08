@@ -62,7 +62,7 @@ public class LoginController {
         }
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public String home(Model model, HttpSession session) {
         model.addAttribute("user", session.getAttribute("user"));
         return "admin/home";

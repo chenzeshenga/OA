@@ -20,4 +20,5 @@ public interface StudentMapper {
     int insertSelective(Student record);
 
     Student selectByUserName(String username);
+    String getNameFromId(int id);
 }

@@ -20,4 +20,6 @@ public interface LeaderMapper {
     int insertSelective(Leader record);
 
     Leader selectByUserName(String username);
+
+    String getNameFromId(int id);
 }

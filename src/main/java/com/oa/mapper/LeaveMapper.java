@@ -24,4 +24,6 @@ public interface LeaveMapper {
     List<Leave> listPositiveLeaves();
 
     int updateVerifyOpinion(Leave leave);
+
+    List<Leave> listLeavesOfAPerson(int applicantId);
 }
