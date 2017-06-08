@@ -38,7 +38,7 @@
             <div class="">
                 <form role="form" action="/doEdit" method="post">
 
-                    <div class="form-group col-lg-6 col-lg-offset-2">
+                    <div class="form-group col-lg-6 col-lg-offset-3">
                         <label>开始日期</label>
                         <div class="input-group date form_datetime col-md-12" date-date="" data-date-format="dd MM yyyy - HH:ii" data-link-field="dtp_input1">
                             <input name="ApplicantStartTime" class="form-control" size="16" type="text" value="" readonly>
@@ -49,7 +49,7 @@
 
                     <input type="hidden" name="id" value="${user.id}" />
 
-                    <div class="form-group col-lg-6 col-lg-offset-2">
+                    <div class="form-group col-lg-6 col-lg-offset-3">
                         <label>结束日期</label>
                         <div class="input-group date form_datetime col-md-12" data-date-format="dd MM yyyy - HH:ii" data-link-field="dtp_input1">
                             <input name="ApplicantEndTime" class="form-control" size="16" type="text" value="" readonly>
@@ -58,12 +58,12 @@
                         </div>
                     </div>
 
-                    <div class="form-group col-lg-6 col-lg-offset-2">
+                    <div class="form-group col-lg-6 col-lg-offset-3">
                         <label>申请请假理由</label>
                         <textarea name="reason" class="form-control" rows="3"></textarea>
                     </div>
 
-                    <div class="col-lg-6 col-lg-offset-4">
+                    <div class="col-lg-6 col-lg-offset-5">
                         <button type="submit" class="btn btn-default">提交</button>
                         <button type="reset" class="btn btn-default">重置</button>
                     </div>
