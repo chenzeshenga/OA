@@ -1,4 +1,5 @@
 <%@ taglib prefix="for" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -26,8 +27,8 @@
 </head>
 <body>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                请假列表
+            <div class="panel-heading text-center">
+                <h4>请假列表</h4>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -39,15 +40,19 @@
                             <th>请假理由</th>
                             <th>请假时间</th>
                             <th>结束时间</th>
-                            <th>申请时间</th>
                             <th>申请人</th>
                             <th>处理结果</th>
                         </tr>
                         </thead>
                         <tbody>
-                            <for:forEach items="${leave}">
-
-                            </for:forEach>
+                            <c:forEach items="${list}" var="item" varStatus="status">
+                                <td>${item.LeaveNo}</td>
+                                <td>${item.LeaveReason}</td>
+                                <td>${item.ApplicantStartTime}</td>
+                                <td>${item.ApplicantEndTime}</td>
+                                <td>${item.ApplicantName}</td>
+                                <td>${item.ApplicationStatus}</td>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>
