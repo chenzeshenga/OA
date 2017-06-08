@@ -49,7 +49,6 @@
                 <ul class="nav nav-pills nav-stacked " style="margin-left: 20px; margin-right: 20px" name="panel">
                     <li><a href="/teach" target="mainFrame">报销情况</a></li>
                     <li><a href="#" target="mainFrame">报销申请</a></li>
-                    <li><a href="#" target="mainFrame">报销处理</a></li>
                 </ul>
             </li>
             <li>
@@ -59,7 +58,6 @@
                 <ul class="nav nav-pills nav-stacked" style="margin-left: 20px; margin-right: 20px" name="panel">
                     <li><a href="/list" target="mainFrame">请假情况</a></li>
                     <li><a href="/edit" target="mainFrame">申请假期</a></li>
-                    <li><a href="#" target="mainFrame">处理请假</a></li>
                 </ul>
             </li>
         </ul>
