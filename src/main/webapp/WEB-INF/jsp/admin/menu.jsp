@@ -10,19 +10,19 @@
 <head>
     <title>菜单</title>
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -33,19 +33,35 @@
     <div class="navbar-default sidebar" role="navigation">
         <ul class="nav nav-pills nav-stacked" style="margin-left: 15px; margin-right: 15px">
             <li>
-                <a id="flip" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                <a name="flip" class="dropdown-toggle" data-toggle="dropdown" role="button">
                     教学部 <span class="caret"></span>
                 </a>
-                <ul class="nav nav-pills nav-stacked" style="margin-left: 20px; margin-right: 20px" id="panel">
+                <ul class="nav nav-pills nav-stacked " style="margin-left: 20px; margin-right: 20px" name="panel">
                     <li><a href="/teach" target="mainFrame">基本信息</a></li>
-                    <li><a href="">个人资料</a></li>
-                    <li><a href="">课程信息</a></li>
+                    <li><a href="#" target="mainFrame">个人资料</a></li>
+                    <li><a href="#" target="mainFrame">课程信息</a></li>
                 </ul>
             </li>
-            <li role="presentation"><a href="#">教质部</a></li>
-            <li role="presentation"><a href="#">财务部</a></li>
-            <li role="presentation"><a href="#">人事部</a></li>
-            <li role="presentation"><a href="#">个人中心</a></li>
+            <li>
+                <a name="flip" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                    财务部 <span class="caret"></span>
+                </a>
+                <ul class="nav nav-pills nav-stacked " style="margin-left: 20px; margin-right: 20px" name="panel">
+                    <li><a href="/teach" target="mainFrame">报销情况</a></li>
+                    <li><a href="#" target="mainFrame">报销申请</a></li>
+                    <li><a href="#" target="mainFrame">报销处理</a></li>
+                </ul>
+            </li>
+            <li>
+                <a name="flip" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                    人事部 <span class="caret"></span>
+                </a>
+                <ul class="nav nav-pills nav-stacked" style="margin-left: 20px; margin-right: 20px" name="panel">
+                    <li><a href="/list" target="mainFrame">请假情况</a></li>
+                    <li><a href="/edit" target="mainFrame">申请假期</a></li>
+                    <li><a href="#" target="mainFrame">处理请假</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>

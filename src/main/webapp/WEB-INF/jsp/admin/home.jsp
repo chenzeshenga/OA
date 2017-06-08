@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>主页</title>
+    <link href="images/head.ico" rel="shortcut icon" />
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +25,7 @@
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 <nav class="navbar" role="navigation" style="margin-top: 10px;">
@@ -96,12 +98,12 @@
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> 熊胜杰</a>
+                <li><a href="#"><i class="fa fa-user fa-fw"></i> ${user.teacherName}</a>
                 </li>
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> 修改资料</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
+                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -125,8 +127,14 @@
 
 <!-- Morris Charts JavaScript -->
 <script src="vendor/raphael/raphael.min.js"></script>
-<script src="vendor/morrisjs/morris.min.js"></script>
-<script src="data/morris-data.js"></script>
+<script src="js/menu.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#mess").click(function(){
+            $("#allmess").slideToggle("slow");
+        });
+    });
+</script>
 
 <!-- Custom Theme JavaScript -->
 <script src="dist/js/sb-admin-2.js"></script>

@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 @Transactional
 public class LeaveService {
-    int askForLeave(int applicantId, String reason,
+    public int askForLeave(int applicantId, String reason,
                     Date startTime, Date endTime) {
         Leave leave = new Leave();
         leave.setApplicantid(applicantId);
@@ -27,11 +27,11 @@ public class LeaveService {
         return leaveMapper.insertSelective(leave);
     }
 
-    List<Leave> listPositiveLeaves() {
+    public List<Leave> listPositiveLeaves() {
         return leaveMapper.listPositiveLeaves();
     }
 
-    int updateVerifyOpinion(Leave leave) {
+    public int updateVerifyOpinion(Leave leave) {
         return leaveMapper.updateVerifyOpinion(leave);
     }
 
