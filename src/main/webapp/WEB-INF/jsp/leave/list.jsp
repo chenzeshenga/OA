@@ -66,7 +66,19 @@
                                     <td>${item.starttime}</td>
                                     <td>${item.endtime}</td>
                                     <td>${item.applicantid}</td>
-                                    <td>${item.applicationstatus}</td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${item.applicationstatus}=='PENDING'">
+                                                处理中
+                                            </c:when>
+                                            <c:when test="${item.applicationstatus}=='YES'">
+                                                批准
+                                            </c:when>
+                                            <c:when test="${item.applicationstatus}=='NO'">
+                                                不批准
+                                            </c:when>
+                                        </c:choose>
+                                    </td>
                                     <td><a href="#"
                                            onclick="window.location.href='/edit?oid=${item.id}&status=1'">批准</a>
                                         <a href="#"
