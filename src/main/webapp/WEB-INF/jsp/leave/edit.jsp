@@ -47,6 +47,8 @@
                         </div>
                     </div>
 
+                    <input type="hidden" name="id" value="${user.id}" />
+
                     <div class="form-group col-lg-6 col-lg-offset-2">
                         <label>结束日期</label>
                         <div class="input-group date form_datetime col-md-12" data-date-format="dd MM yyyy - HH:ii" data-link-field="dtp_input1">
