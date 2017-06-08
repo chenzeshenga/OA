@@ -66,7 +66,12 @@ public class LoginController {
     }
 //
     @RequestMapping("/list")
-    public String top() {
+    public String list() {
         return "leave/list";
+    }
+
+    @RequestMapping("/edit")
+    public String edit() {
+        return "leave/edit";
     }
 }
