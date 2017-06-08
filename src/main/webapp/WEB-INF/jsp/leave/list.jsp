@@ -46,12 +46,12 @@
                         </thead>
                         <tbody>
                             <c:forEach items="${list}" var="item" varStatus="status">
-                                <td>${item.LeaveNo}</td>
-                                <td>${item.LeaveReason}</td>
-                                <td>${item.ApplicantStartTime}</td>
-                                <td>${item.ApplicantEndTime}</td>
-                                <td>${item.ApplicantName}</td>
-                                <td>${item.ApplicationStatus}</td>
+                                <td>${item.id}</td>
+                                <td>${item.reason}</td>
+                                <td>${item.starttime}</td>
+                                <td>${item.endtime}</td>
+                                <td>${item.applicantid}</td>
+                                <td>${item.applicationstatus}</td>
                             </c:forEach>
                         </tbody>
                     </table>

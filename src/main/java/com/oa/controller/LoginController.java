@@ -1,6 +1,7 @@
 package com.oa.controller;
 
 import com.oa.mapper.TeacherMapper;
+import com.oa.service.LeaveService;
 import com.oa.service.LoginService;
 import com.oa.util.MyUserToken;
 import org.apache.shiro.SecurityUtils;
@@ -25,7 +26,7 @@ public class LoginController {
 
     @RequestMapping("/login")
     public String hello() {
-        return "loginView";
+        return "login";
     }
 
     @RequestMapping("/doLogin")
@@ -64,21 +65,21 @@ public class LoginController {
 //        return "/login";
 //    }
 //
-//    @RequestMapping("/home_except_top")
-//    public String home() {
-//        return "admin/home_except_top";
-//    }
+    @RequestMapping("/home_except_top")
+    public String home() {
+        return "admin/home_except_top";
+    }
 //
-//    @RequestMapping("/menu")
-//    public String menu() {
-//        return "admin/menu";
-//    }
-//
-//    @RequestMapping("/teach")
-//    public String teach() {
-//        return "admin/teach";
-//    }
-//
+    @RequestMapping("/menu")
+    public String menu() {
+        return "admin/menu";
+    }
+
+    @RequestMapping("/teach")
+    public String teach() {
+        return "admin/teach";
+    }
+
 //    @RequestMapping("/home")
 //    public String top() {
 //        return "admin/home";

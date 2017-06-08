@@ -36,7 +36,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="">
-                <form role="form">
+                <form role="form" action="/doEdit" method="post">
 
                     <div class="form-group col-lg-6 col-lg-offset-2">
                         <label>开始日期</label>
@@ -60,7 +60,7 @@
 
                     <div class="form-group col-lg-6 col-lg-offset-2">
                         <label>申请请假理由</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea name="reason" class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="col-lg-6 col-lg-offset-4">
