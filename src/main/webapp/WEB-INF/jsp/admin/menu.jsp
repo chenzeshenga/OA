@@ -47,8 +47,8 @@
                     财务部 <span class="caret"></span>
                 </a>
                 <ul class="nav nav-pills nav-stacked " style="margin-left: 20px; margin-right: 20px" name="panel">
-                    <li><a href="/teach" target="mainFrame">报销情况</a></li>
-                    <li><a href="#" target="mainFrame">报销申请</a></li>
+                    <li><a href="/D_list" target="mainFrame">报销情况</a></li>
+                    <li><a href="/D_edit" target="mainFrame">报销申请</a></li>
                 </ul>
             </li>
             <li>
