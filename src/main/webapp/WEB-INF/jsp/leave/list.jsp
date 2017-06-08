@@ -50,7 +50,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <shiro:hasRole name="teacher">
+                <shiro:hasAnyRoles name="teacher,student" >
                     <c:forEach items="${list}" var="item" varStatus="status">
                         <tr>
                             <td>${item.id}</td>
@@ -72,7 +72,7 @@
                                 </c:choose>
                         </tr>
                     </c:forEach>
-                </shiro:hasRole>
+                </shiro:hasAnyRoles>
                 <shiro:hasRole name="leader">
                     <c:forEach items="${list}" var="item" varStatus="status">
                         <tr>

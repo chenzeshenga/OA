@@ -90,9 +90,7 @@ public class LeaveController {
         if (subject.hasRole("leader"))
             userType += 1000;
         if (subject.hasRole("student"))
-            userType += 1000;
-        if (subject.hasRole("teacher"))
-            userType = 0;
+            userType += 2000;
         return userType;
     }
 

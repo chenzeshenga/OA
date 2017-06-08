@@ -68,12 +68,12 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!--核心安全接口-->
         <property name="securityManager" ref="securityManager"/>
-        <property name="unauthorizedUrl" value="/login"/>
-        <!--todo:chain action-->
+        <property name="loginUrl" value="/login"/>
         <property name="filterChainDefinitions">
             <value>
-                /security/*=anon
+                /=authc
                 /admin=authc
+                /logout=logout
             </value>
         </property>
     </bean>
