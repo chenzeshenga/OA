@@ -12,6 +12,8 @@
     <meta charset="utf-8" />
     <title>登录</title>
 
+    <link href="images/head.ico" rel="shortcut icon" />
+
     <meta name="description" content="User login page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -69,20 +71,29 @@
 
                                     <div class="space-6"></div>
 
-                                    <form action="/home">
+                                    <form action="/doLogin" method="post">
                                         <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
+															<input type="text" name="username" class="form-control" placeholder="Username" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="password" name="password" class="form-control" placeholder="Password" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
+                                            </label>
+
+
+                                            <label class="block clearfix">
+                                                <select class="form-control input-sm" name="userType">
+                                                    <option value="student" selected="selected">学生</option>
+                                                    <option value="teacher">老师</option>
+                                                    <option value="">领导</option>
+                                                </select>
                                             </label>
 
                                             <div class="space"></div>

@@ -20,7 +20,7 @@
 </head>
 <frameset rows="520,*" frameborder="0" border="0" framespacing="0">
     <frameset cols="159,*" frameborder="0" border="0" framespacing="0">
-            <frame src="/menu" name="leftFrame" noresize scrolling="YES">
+        <frame src="/menu" name="leftFrame" noresize scrolling="YES">
         <frame src="" name="mainFrame" style="background-color: aliceblue">
     </frameset>
     <frame src="" name="bottomFrame" scrolling="NO"  noresize>
