@@ -28,11 +28,12 @@ public class ReimbursementService {
         return mapper.insertSelective(reimbursement);
     }
 
-    List<Reimbursement> listPositiveReimbursement() {
+    public List<Reimbursement> listPositiveReimbursement() {
         return mapper.listPositiveReimbursement();
     }
 
-    int updateVerifyOpinion(Reimbursement reimbursement) {
+    public int updateVerifyOpinion(Reimbursement reimbursement) {
         return mapper.updateVerifyOpinion(reimbursement);
     }
+
 }
